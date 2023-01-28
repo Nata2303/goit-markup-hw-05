@@ -5,7 +5,7 @@
   --aktiv-heder--: #404bbf;
   --btn-brand-color--: #ffffff;
   --background-color--: #f4f4fd;
-  --transition-timing-function--:cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-timing-function--: cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -575,7 +575,7 @@ header {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .item:hover .item-text {
-transform: translateY(-0%);
+  transform: translateY(-0%);
 }
 .item-top {
   position: relative;
@@ -595,7 +595,7 @@ transform: translateY(-0%);
   color: var(--background-color--);
   height: 100%;
   transform: translateY(100%);
-  transition-property:transform;
+  transition-property: transform;
   transition-duration: 250ms;
   transition-timing-function: var(--transition-timing-function--);
 }
@@ -629,8 +629,11 @@ transform: translateY(-0%);
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 24px;
-  transition-duration: 20ms;
+  transition-duration: 250ms;
   transition-timing-function: var(--transition-timing-function--);
+}
+.backdrop.is-hidden.modal{
+  transform: translate(-50%, -50%), scale(1);
   opacity: 1;
 }
 .modal-close {
@@ -644,6 +647,12 @@ transform: translateY(-0%);
   right: 24px;
   border-radius: 50%;
   cursor: pointer;
+  transition-duration: 250ms;
+  transition-timing-function: var(--transition-timing-function--);
+}
+.modal-close{
+  transform: translate(-50%, -50%), scale(1);
+  opacity: 1;
 }
 .close {
   fill: black;
