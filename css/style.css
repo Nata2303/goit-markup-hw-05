@@ -5,6 +5,7 @@
   --aktiv-heder--: #404bbf;
   --btn-brand-color--: #ffffff;
   --background-color--: #f4f4fd;
+  --transition-timing-function--:cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -80,7 +81,7 @@ header {
   border: 0;
   transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing-function--);
 }
 .heder-item:hover,
 .heder-item:focus {
@@ -121,7 +122,7 @@ header {
   margin-top: 0;
   transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing-function--);
 }
 
 .contakt-item:hover,
@@ -191,7 +192,7 @@ header {
   margin-right: auto;
   transition-property: background;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing-function--);
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -350,7 +351,7 @@ header {
   height: 100%;
   transition-property: background-color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing-function--);
 }
 .team-social-icons {
   fill: var(--btn-brand-color--);
@@ -396,7 +397,7 @@ header {
   border-radius: 4px;
   transition-property: border-color, fill;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing-function--);
 }
 .customers-icons {
   position: absolute;
@@ -443,7 +444,7 @@ header {
   height: 40px;
   transition-property: background-color, border-radius;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing-function--);
 }
 .footer-social-link {
   display: flex;
@@ -522,7 +523,7 @@ header {
   padding: 12px 24px;
   transition-property: color, background-color, box-shadow, border-color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing-function--);
 }
 .btn-item:hover,
 .btn-item:focus {
@@ -562,9 +563,9 @@ header {
 }
 .item {
   margin-bottom: 48px;
-  transition-property: box-shadow;
+  transition-property: box-shadow, transform;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing-function--);
 }
 .item:nth-child(n + 7) {
   margin-bottom: 0px;
@@ -574,11 +575,11 @@ header {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .item:hover .item-text {
-
+transform: translateY(-0%);
 }
 .item-top {
   position: relative;
-  
+  overflow: hidden;
 }
 .item-text {
   position: absolute;
@@ -593,8 +594,10 @@ header {
   background-color: var(--primary-brand-color--);
   color: var(--background-color--);
   height: 100%;
-  
-  
+  transform: translateY(100%);
+  transition-property:transform;
+  transition-duration: 250ms;
+  transition-timing-function: var(--transition-timing-function--);
 }
 .menu-list {
   display: flex;
@@ -626,6 +629,9 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 24px;
+  transition-duration: 20ms;
+  transition-timing-function: var(--transition-timing-function--);
+  opacity: 1;
 }
 .modal-close {
   width: 24px;
@@ -638,12 +644,6 @@ header {
   right: 24px;
   border-radius: 50%;
   cursor: pointer;
-  transform: rotate(90deg);
-  transition-duration: 250ms;
-  transition-timing-function: linear;
-}
-.modal-close:is(:hover,:focus){
-  background-color: blue;
 }
 .close {
   fill: black;
