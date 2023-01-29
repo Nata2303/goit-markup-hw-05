@@ -140,7 +140,7 @@ header {
   border-radius: 2px;
   background-color: var(--aktiv-heder--);
   left: 0;
-  bottom: -28px;
+  bottom: -32px;
 }
 /*section 1*/
 .hero {
@@ -396,8 +396,8 @@ header {
   border: 1px solid #8e8f99;
   border-radius: 4px;
   transition-property: border-color, fill;
-  transition-duration: 250ms;
-  transition-timing-function: var(--transition-timing-function--);
+  transition-duration: border-color 250ms, fill 250ms;
+  transition-timing-function: border-color var(--transition-timing-function--), fill var(--transition-timing-function--);
 }
 .customers-icons {
   position: absolute;
@@ -611,10 +611,11 @@ header {
   background-color: #2e2f424e;
   position: fixed;
   top: 0;
+  opacity: 1;
+  transition: opacity 250ms var(--transition-timing-function--);
 }
-.is-hidden {
+.backdrop.is-hidden {
   opacity: 0;
-  visibility: hidden;
   pointer-events: none;
 }
 .modal {
@@ -627,14 +628,12 @@ header {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   padding: 24px;
-  transition-duration: 250ms;
-  transition-timing-function: var(--transition-timing-function--);
+  transition: transform 250ms var(--transition-timing-function--);
 }
 .backdrop.is-hidden.modal{
-  transform: translate(-50%, -50%), scale(1);
-  opacity: 1;
+  transform: translate(-50%, -50%) scale(0,9);
 }
 .modal-close {
   width: 24px;
@@ -647,15 +646,18 @@ header {
   right: 24px;
   border-radius: 50%;
   cursor: pointer;
-  transition-duration: 250ms;
-  transition-timing-function: var(--transition-timing-function--);
+  transform: background-color;
+  transition: transform 250ms var(--transition-timing-function--);
 }
-.modal-close{
-  transform: translate(-50%, -50%), scale(1);
-  opacity: 1;
+.modal-close:is(:hover,:focus){
+background-color: #434455;
 }
 .close {
   fill: black;
   width: 8px;
   height: 8px;
+  display: block;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
