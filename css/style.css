@@ -355,6 +355,8 @@ header {
 }
 .team-social-icons {
   fill: var(--btn-brand-color--);
+  width: 16px;
+  height: 16px;
 }
 .team-social-link:is(:hover, :focus) {
   background-color: var(--aktiv-heder--);
@@ -395,15 +397,14 @@ header {
   padding: 16px 32px;
   border: 1px solid #8e8f99;
   border-radius: 4px;
-  transition-property: border-color, fill;
-  transition-duration: border-color 250ms, fill 250ms;
-  transition-timing-function: border-color var(--transition-timing-function--), fill var(--transition-timing-function--);
+  transition: border-color 250ms var(--transition-timing-function--);
 }
 .customers-icons {
   position: absolute;
   fill: #8e8f99;
   width: 104px;
   height: 56px;
+  transition: fill 250ms var(--transition-timing-function--);
 }
 .customers-link:is(:hover, :focus) {
   border-color: var(--aktiv-heder--);
@@ -659,5 +660,11 @@ background-color: #434455;
   display: block;
   align-items: center;
   margin: 0;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
 }
+.close:is(:hover,:focus){
+fill:white
+}
+
