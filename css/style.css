@@ -663,8 +663,8 @@ background-color: #434455;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
+  transition:fill 250ms var(--transition-timing-function--);
 }
-.close:is(:hover,:focus){
+.modal-close:is(:hover,:focus) .close{
 fill:white
 }
-
